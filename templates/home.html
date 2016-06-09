@@ -3,9 +3,10 @@
 
 {% block js %}
 <script src="{{ url_for('static', filename='js/timbre.js') }}"></script>
+<script>
+    T("sin", {freq:880, mul:0.5}).play();
+</script>
 {% endblock %}
-
-
 {% block main %}
 ololo
 {% endblock %}
