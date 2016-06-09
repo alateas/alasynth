@@ -1,1 +1,1 @@
-web: gunicorn alasynth:app
+web: gunicorn app:app
