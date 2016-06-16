@@ -3,8 +3,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    """Render website's home page."""
     return render_template('home.html')
+
+@app.route('/synth')
+def synth():
+    return render_template('synth.html')
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000)
