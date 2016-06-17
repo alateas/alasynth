@@ -42,6 +42,8 @@
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="{{ url_for('static', filename='js/timbre.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/keyboard.js') }}"></script>
 
   <!-- Additional JavaScript libraries and plugins... -->
   {% block js %}{% endblock %}
