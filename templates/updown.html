@@ -3,23 +3,23 @@
 
 {% block js %}
 <script>
-    var synth = T("OscGen", {wave:"saw", mul:0.25}).play();
+    // var synth = T("OscGen", {wave:"saw", mul:0.25}).play();
 
-    var keydict = T("ndict.key");
-    var midicps = T("midicps");
-    T("keyboard").on("keydown", function(e) {
-      var midi = keydict.at(e.keyCode);
-      if (midi) {
-        var freq = midicps.at(midi);
-        $("#freq").html("freq: " + freq)
-        synth.noteOnWithFreq(freq, 100);
-      }
-    }).on("keyup", function(e) {
-      var midi = keydict.at(e.keyCode);
-      if (midi) {
-        synth.noteOff(midi, 100);
-      }
-    }).start();
+    // var keydict = T("ndict.key");
+    // var midicps = T("midicps");
+    // T("keyboard").on("keydown", function(e) {
+    //   var midi = keydict.at(e.keyCode);
+    //   if (midi) {
+    //     var freq = midicps.at(midi);
+    //     $("#freq").html("freq: " + freq)
+    //     synth.noteOnWithFreq(freq, 100);
+    //   }
+    // }).on("keyup", function(e) {
+    //   var midi = keydict.at(e.keyCode);
+    //   if (midi) {
+    //     synth.noteOff(midi, 100);
+    //   }
+    // }).start();
 
 
     var plot_y_range = [0, 700];
@@ -42,7 +42,7 @@
     var freq2 = 440;
 
     gen = T("sin", {freq:freq, mul:0.25})
-    gen.play();
+    // gen.play();
 
     var x = 0
     var interval = T("interval", {interval:1000}, function(count) {
@@ -66,13 +66,33 @@
       ctx.save();
       x = x + 1;
 
-      var freqs = T("param", {value:freq}).expTo(freq2, "500ms");
+      var freqs = T("param", {value:freq}).expTo(freq2, "1000ms");
       gen.set({freq:freqs});
-    }).start();
+    });
+
+    $(document).ready(function() {
+      $("#play-button").click(function() {
+        gen.play();
+        interval.start();
+        $("#pause-button").show();
+        $("#play-button").hide();
+      });
+
+      $("#pause-button").click(function() {
+        gen.pause();
+        interval.stop();
+        $("#pause-button").hide();
+        $("#play-button").show();
+      });
+    });
 
 </script>
 {% endblock %}
 {% block main %}
 <div id="freq"></div>
 <canvas id="plotarea" style="width:1000px;height:200px" width="1000" height="200"></canvas>
+<div id="buttons">
+  <button id="play-button">Play</button>
+  <button id="pause-button" style="display: none;">Pause</button>
+</div>
 {% endblock %}
