@@ -1,0 +1,26 @@
+{
+  "name": "alasynth",
+  "version": "0.0.0",
+  "description": "sound expirements",
+  "main": "project/app.py",
+  "dependencies": {
+    "gulp": "~3.9.1"
+  },
+  "devDependencies": {
+    "bower": "~1.7.9",
+    "gulp-coffee": "~2.3.2",
+    "gulp-util": "~3.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alateas/alasynth.git"
+  },
+  "author": "alateas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alateas/alasynth/issues"
+  }
+}

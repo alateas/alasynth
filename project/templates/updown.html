@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block js %}
+  <script src="{{ url_for('static', filename='js/updown.js') }}"></script>
+{% endblock %}
+{% block main %}
+<div id="freq"></div>
+<canvas id="plotarea" style="width:1000px;height:200px" width="1000" height="200"></canvas>
+<div id="buttons">
+  <button id="play-button">Play</button>
+  <button id="pause-button" style="display: none;">Pause</button>
+</div>
+{% endblock %}

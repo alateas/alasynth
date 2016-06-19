@@ -1,0 +1,21 @@
+{
+  "name": "alasynth",
+  "homepage": "https://github.com/alateas/alasynth",
+  "authors": [
+    "alateas <dmitrymashkin@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "timbre.js": "timbre#^14.11.25"
+  }
+}

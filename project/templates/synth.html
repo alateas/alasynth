@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+
+{% block js %}
+  <script src="{{ url_for('static', filename='js/synth.js') }}"></script>
+{% endblock %}
+{% block main %}
+<img src="{{ url_for('static', filename='bower_components/timbre.js/misc/img/keymap.png') }}">
+{% endblock %}
